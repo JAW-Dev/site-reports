@@ -1,0 +1,42 @@
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./css/admin.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! Keep this comment Admin Styles*/
+.custom-reports {
+  padding-top: 4.0625rem; }
+  .custom-reports .button.loading {
+    padding-right: 1.875rem; }
+    .custom-reports .button.loading::after {
+      position: relative;
+      top: 0.3125rem;
+      left: 1.25rem;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-top: -0.625rem;
+      margin-left: -0.625rem;
+      content: '';
+      border: 0.0625rem solid #cccccc;
+      border-top-color: #0071a1;
+      border-radius: 50%;
+      animation: spinner 0.6s linear infinite; }
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg); } }
+  .custom-reports hr {
+    height: auto;
+    color: transparent;
+    background-color: transparent;
+    margin-bottom: 3rem; }
+
+.custom-reports__filters {
+  margin-bottom: 1rem; }
+  .custom-reports__filters-date-range {
+    margin-bottom: 1rem; }
+  .custom-reports__filters p {
+    margin: 0; }
+
+
+/*# sourceMappingURL=admin.css.map*/

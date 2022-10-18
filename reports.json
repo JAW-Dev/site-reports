@@ -1,0 +1,57 @@
+{
+	"reports": [
+		{
+			"name": "Posts",
+			"slug": "posts",
+			"description": "Some kind of description",
+			"has_table": "true",
+			"columns": [
+				{
+					"id": "ID",
+					"name": "ID",
+					"sortable": "true"
+				},
+				{
+					"id": "post_title",
+					"name": "Title",
+					"sortable": "true"
+				},
+				{
+					"id": "post_author",
+					"name": "Author",
+					"sortable": "true"
+				},
+				{
+					"id": "post_status",
+					"name": "Status",
+					"sortable": "true"
+				},
+				{
+					"id": "post_date",
+					"name": "Date",
+					"sortable": "false"
+				}
+			],
+			"filters": [
+				{
+					"type": "date"
+				},
+				{
+					"type": "select",
+					"id": "number",
+					"name": "Numbers",
+					"options": [
+						{
+							"value": "1",
+							"label": "One"
+						},
+						{
+							"value": "2",
+							"label": "two"
+						}
+					]
+				}
+			]
+		}
+	]
+}
