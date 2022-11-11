@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = (options, settings) => {
 	if (options.process.typescript) {
 		settings.module.rules.push({
