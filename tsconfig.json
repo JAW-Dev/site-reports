@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"rootDir": "assets/ts",
+		"rootDir": "./",
 		"outDir": "src",
 		"target": "es2019",
 		"lib": [
@@ -10,6 +10,7 @@
 		"module": "commonjs",
 		"esModuleInterop": true,
 		"strict": true,
-		"sourceMap": true
+		"sourceMap": true,
+		"resolveJsonModule": true,
 	}
 }
