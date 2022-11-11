@@ -40,14 +40,15 @@ class Select {
 	 * @author Jason Witt
 	 * @since  1.0.0
 	 *
-	 * @param string $slug The report slug.
+	 * @param string $id     The report id.
+	 * @param object $filter The filter.
 	 *
 	 * @return void
 	 */
-	public static function get( $slug, $filter ) {
+	public static function get( $id, $filter ) {
 		$param = sanitize_text_field( wp_unslash( $_GET[ $filter->id ] ?? '' ) );
 		?>
-		<select id="<?php echo esc_attr( $slug ); ?>-<?php echo esc_attr( $filter->id ); ?>" name="<?php echo esc_attr( $filter->id ); ?>" class="custom-reports__filters-"<?php echo esc_attr( $filter->id ); ?>>
+		<select id="<?php echo esc_attr( $id ); ?>-<?php echo esc_attr( $filter->id ); ?>" name="<?php echo esc_attr( $filter->id ); ?>" class="custom-reports__filters-"<?php echo esc_attr( $filter->id ); ?>>
 			<option value="">Select <?php echo esc_html( $filter->name ); ?></option>
 			<?php
 			foreach ( $filter->options as $option ) {

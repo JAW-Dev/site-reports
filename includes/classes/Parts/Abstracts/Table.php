@@ -184,10 +184,10 @@ abstract class TableAbstract extends \WP_List_Table {
 						foreach( $this->filters as $filter ) {
 							switch( $filter->type ) {
 								case 'date':
-									Date::get( $this->slug );
+									Date::get( $this->id );
 									break;
 								case 'select':
-									Select::get( $this->slug, $filter );
+									Select::get( $this->id, $filter );
 									break;
 							}
 						}
@@ -214,7 +214,7 @@ abstract class TableAbstract extends \WP_List_Table {
 			$this->pagination( $which );
 			?>
 			<form method="get" action="/">
-				<button id="<?php echo esc_attr( $this->slug ); ?>" class="button" data-nonce="<?php echo esc_attr( $this->slug ); ?>">Download <?php echo esc_html( $this->title ); ?> CSV</button>
+				<button id="<?php echo esc_attr( $this->id ); ?>" class="button" data-nonce="<?php echo esc_attr( $this->id ); ?>">Download <?php echo esc_html( $this->title ); ?> CSV</button>
 			</form>
 			<?php
 		}
