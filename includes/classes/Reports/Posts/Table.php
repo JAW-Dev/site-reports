@@ -3,7 +3,7 @@
  * Table
  *
  * @package    Site_Reports
- * @subpackage Site_Reports/Inlcudes/Classes
+ * @subpackage Site_Reports/Inlcudes/Classes/Reports/Posts
  * @author     Jason Witt
  * @copyright  Copyright (c) 2022, Jason Witt
  * @license    GNU General Public License v2 or later
@@ -54,8 +54,6 @@ class Table extends TableAbstract {
 	 * @return array
 	 */
 	public function table_data() {
-		$data = get_posts();
-
-		return (array) $data;
+		return ( new Data() )->get();
 	}
 }

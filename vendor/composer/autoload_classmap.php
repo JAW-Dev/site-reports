@@ -16,6 +16,7 @@ return array(
     'Site_Reports\\Includes\\Classes\\Init' => $baseDir . '/includes/classes/Init.php',
     'Site_Reports\\Includes\\Classes\\MenuPage' => $baseDir . '/includes/classes/MenuPage.php',
     'Site_Reports\\Includes\\Classes\\Posts\\Filters' => $baseDir . '/includes/classes/Parts/Traits/Filters.php',
+    'Site_Reports\\Includes\\Classes\\Reports\\Posts\\Data' => $baseDir . '/includes/classes/Reports/Posts/Data.php',
     'Site_Reports\\Includes\\Classes\\Reports\\Posts\\Table' => $baseDir . '/includes/classes/Reports/Posts/Table.php',
     'Site_Reports\\Includes\\Classes\\Reports\\Posts\\Template' => $baseDir . '/includes/classes/Reports/Posts/Template.php',
     'Site_Reports\\Includes\\Classes\\Traits\\Date' => $baseDir . '/includes/classes/Parts/Traits/Filters/Date.php',

@@ -40,19 +40,19 @@ class Date {
 	 * @author Jason Witt
 	 * @since  1.0.0
 	 *
-	 * @param string $slug The report slug.
+	 * @param string $id The report id.
 	 *
 	 * @return void
 	 */
-	public static function get( $slug ) {
+	public static function get( $id ) {
 		$from_value        = sanitize_text_field( wp_unslash( $_GET['from-date'] ?? '' ) );
 		$to_value          = sanitize_text_field( wp_unslash( $_GET['to-date'] ?? '' ) );
 		?>
 		<div class="custom-reports__filters-date-range" style="display: inline;">
-			<label for="<?php echo esc_attr( $slug ); ?>-from-date">From</label>
-			<input type="text" id="<?php echo esc_attr( $slug ); ?>-from-date" name="date_from" class="report-filter" placeholder="Date From" value="<?php echo esc_attr( $from_value ); ?>">
-			<label for="<?php echo esc_attr( $slug ); ?>-to-date">To</label>
-			<input type="text" id="<?php echo esc_attr( $slug ); ?>-to-date" name="date_to" class="report-filter" placeholder="Date To" value="<?php echo esc_attr( $to_value ); ?>">
+			<label for="<?php echo esc_attr( $id ); ?>-from-date">From</label>
+			<input type="text" id="<?php echo esc_attr( $id ); ?>-from-date" name="date_from" class="report-filter" placeholder="Date From" value="<?php echo esc_attr( $from_value ); ?>">
+			<label for="<?php echo esc_attr( $id ); ?>-to-date">To</label>
+			<input type="text" id="<?php echo esc_attr( $id ); ?>-to-date" name="date_to" class="report-filter" placeholder="Date To" value="<?php echo esc_attr( $to_value ); ?>">
 		</div>
 		<?php
 	}

@@ -85,6 +85,9 @@ abstract class TemplateAbstract {
 	 * @return void
 	 */
 	public function hooks() {
+		add_action( "wp_ajax_{$this->id}", array( $this, 'report' ) );
+		add_action( "wp_ajax_nopriv_{$this->id}", array( $this, 'report' ) );
+
 		if ( $this->has_table ) {
 			add_action( 'admin_menu', array( $this, 'full_report' ) );
 			add_filter( 'set-screen-option', array( $this, 'table_set_option' ), 10, 3 );
@@ -174,4 +177,14 @@ abstract class TemplateAbstract {
 		</div>
 		<?php
 	}
+
+	/**
+	 * Report
+	 *
+	 * @author Jason Witt
+	 * @since  1.0.0
+	 *
+	 * @return void
+	 */
+	public function report() {}
 }

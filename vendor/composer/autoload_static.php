@@ -31,6 +31,7 @@ class ComposerStaticInit4ec56a3aaa879d44afcb51eb9c7ca325
         'Site_Reports\\Includes\\Classes\\Init' => __DIR__ . '/../..' . '/includes/classes/Init.php',
         'Site_Reports\\Includes\\Classes\\MenuPage' => __DIR__ . '/../..' . '/includes/classes/MenuPage.php',
         'Site_Reports\\Includes\\Classes\\Posts\\Filters' => __DIR__ . '/../..' . '/includes/classes/Parts/Traits/Filters.php',
+        'Site_Reports\\Includes\\Classes\\Reports\\Posts\\Data' => __DIR__ . '/../..' . '/includes/classes/Reports/Posts/Data.php',
         'Site_Reports\\Includes\\Classes\\Reports\\Posts\\Table' => __DIR__ . '/../..' . '/includes/classes/Reports/Posts/Table.php',
         'Site_Reports\\Includes\\Classes\\Reports\\Posts\\Template' => __DIR__ . '/../..' . '/includes/classes/Reports/Posts/Template.php',
         'Site_Reports\\Includes\\Classes\\Traits\\Date' => __DIR__ . '/../..' . '/includes/classes/Parts/Traits/Filters/Date.php',
