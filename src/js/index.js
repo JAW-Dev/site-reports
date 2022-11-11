@@ -3114,8 +3114,8 @@ var FunctionPrototype = Function.prototype;
 var call = FunctionPrototype.call;
 var uncurryThisWithBind = NATIVE_BIND && FunctionPrototype.bind.bind(call, call);
 
-module.exports = function (fn) {
-  return NATIVE_BIND ? uncurryThisWithBind(fn) : function () {
+module.exports = NATIVE_BIND ? uncurryThisWithBind : function (fn) {
+  return function () {
     return call.apply(fn, arguments);
   };
 };
@@ -6175,10 +6175,10 @@ var store = __webpack_require__(/*! ../internals/shared-store */ "../node_module
 (module.exports = function (key, value) {
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
-  version: '3.25.5',
+  version: '3.26.0',
   mode: IS_PURE ? 'pure' : 'global',
   copyright: '© 2014-2022 Denis Pushkarev (zloirock.ru)',
-  license: 'https://github.com/zloirock/core-js/blob/v3.25.5/LICENSE',
+  license: 'https://github.com/zloirock/core-js/blob/v3.26.0/LICENSE',
   source: 'https://github.com/zloirock/core-js'
 });
 
@@ -16925,6 +16925,58 @@ $({ global: true, enumerable: true, dontCallGetSet: true }, {
 
 /***/ }),
 
+/***/ "../node_modules/core-js/modules/web.self.js":
+/*!***************************************************!*\
+  !*** ../node_modules/core-js/modules/web.self.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "../node_modules/core-js/internals/export.js");
+var global = __webpack_require__(/*! ../internals/global */ "../node_modules/core-js/internals/global.js");
+var defineBuiltInAccessor = __webpack_require__(/*! ../internals/define-built-in-accessor */ "../node_modules/core-js/internals/define-built-in-accessor.js");
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "../node_modules/core-js/internals/descriptors.js");
+
+var $TypeError = TypeError;
+// eslint-disable-next-line es/no-object-defineproperty -- safe
+var defineProperty = Object.defineProperty;
+var INCORRECT_VALUE = global.self !== global;
+
+// `self` getter
+// https://html.spec.whatwg.org/multipage/window-object.html#dom-self
+try {
+  if (DESCRIPTORS) {
+    // eslint-disable-next-line es/no-object-getownpropertydescriptor -- safe
+    var descriptor = Object.getOwnPropertyDescriptor(global, 'self');
+    // some engines have `self`, but with incorrect descriptor
+    // https://github.com/denoland/deno/issues/15765
+    if (INCORRECT_VALUE || !descriptor || !descriptor.get || !descriptor.enumerable) {
+      defineBuiltInAccessor(global, 'self', {
+        get: function self() {
+          return global;
+        },
+        set: function self(value) {
+          if (this !== global) throw $TypeError('Illegal invocation');
+          defineProperty(global, 'self', {
+            value: value,
+            writable: true,
+            configurable: true,
+            enumerable: true
+          });
+        },
+        configurable: true,
+        enumerable: true
+      });
+    }
+  } else $({ global: true, simple: true, forced: INCORRECT_VALUE }, {
+    self: global
+  });
+} catch (error) { /* empty */ }
+
+
+/***/ }),
+
 /***/ "../node_modules/core-js/modules/web.set-immediate.js":
 /*!************************************************************!*\
   !*** ../node_modules/core-js/modules/web.set-immediate.js ***!
@@ -19263,6 +19315,7 @@ __webpack_require__(/*! ../modules/web.dom-exception.stack */ "../node_modules/c
 __webpack_require__(/*! ../modules/web.dom-exception.to-string-tag */ "../node_modules/core-js/modules/web.dom-exception.to-string-tag.js");
 __webpack_require__(/*! ../modules/web.immediate */ "../node_modules/core-js/modules/web.immediate.js");
 __webpack_require__(/*! ../modules/web.queue-microtask */ "../node_modules/core-js/modules/web.queue-microtask.js");
+__webpack_require__(/*! ../modules/web.self */ "../node_modules/core-js/modules/web.self.js");
 __webpack_require__(/*! ../modules/web.structured-clone */ "../node_modules/core-js/modules/web.structured-clone.js");
 __webpack_require__(/*! ../modules/web.timers */ "../node_modules/core-js/modules/web.timers.js");
 __webpack_require__(/*! ../modules/web.url */ "../node_modules/core-js/modules/web.url.js");
